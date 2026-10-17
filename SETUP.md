@@ -6,6 +6,8 @@ This repo is a scaffold copied from the skills-repo template. Work top to bottom
 
 - [ ] Update `README.md`, keeping the template's section order and style: render the repo name with FIGlet's ANSI Shadow font only, then add the title and one-liner, badges (set OWNER, REPO and the skill count), principle in the [!IMPORTANT] callout, intro paragraph, "How they fit together" diagram (delete for a single-skill repo), usage phrases, status and footer links. Split long names across lines as needed and centre a shorter line for a balanced banner. Keep local setup files out of the public layout block.
 - [ ] Update `LICENSE`: replace `<copyright holder>`
+- [ ] Fill in `.claude-plugin/plugin.json` and `.claude-plugin/marketplace.json`: replace every `<PLACEHOLDER>`. Name the marketplace `<plugin-name>-marketplace`: a user can register only one marketplace per name, so two repos must not share one. Plugin names must be kebab-case and must not start with `claude-` or `anthropic-`. Set `license` to match `LICENSE`. If the repo is proprietary, replace `LICENSE`, remove the MIT badge and "Licensed under MIT" line from `README.md`, and set `license` accordingly
+- [ ] Bump `version` in `plugin.json` for every release; installed users stay on the old version until it changes
 - [ ] `AGENTS.md`: the general rules are identical in every repo by design; do not reword them. Adapt only two sections to the new repo: the **Repository map** (canonical sources, generated artefacts, editing rules, each with a reason) and **Known deliberate states** (delete the placeholder line). The verification command `python scripts/skills_tool.py check` is already correct because the template ships the same validator
 
 ## 2. Content
@@ -19,7 +21,7 @@ This repo is a scaffold copied from the skills-repo template. Work top to bottom
 - [ ] If skills share constraints or a "voice", put them in one references file and link it from skills, never copy it
 - [ ] Add 3+ behavioural cases per skill to `evals/cases.jsonl` (real queries, expected behaviours, at least one refusal case)
 - [ ] Replace the starter cases and delete `skills/example-skill/`
-- [ ] Inspect `resources/agents/` after the skills and router names are final. If no definitions were supplied, install none and leave agent folders and dispatch instructions out. Supply at most two native profiles per host: one main workflow agent named `<router-skill>-workflow`, plus one focused helper. Put planning, implementation, testing, and review modes in named sections of the main agent rather than creating one agent per skill. Use a `shared-` helper only when the same definition is reused across repos. Wire the router skill to the main workflow agent and describe when to use the helper. Other hosts receive the skills only. Preserve `resources/agents/` in the shipped repo so the installer can copy profiles into a project.
+- [ ] Inspect `resources/agents/` after the skills and router names are final. If no definitions were supplied, install none and leave agent folders and dispatch instructions out. Supply at most two native profiles per host: one main workflow agent named `<router-skill>-workflow`, plus one focused helper. Put planning, implementation, testing, and review modes in named sections of the main agent rather than creating one agent per skill. Use a `shared-` helper only when the same definition is reused across repos. Wire the router skill to the main workflow agent and describe when to use the helper. List each Claude Code profile in the `agents` array of `plugin.json` (`./resources/agents/claude-code/...md`). In agent bodies, name skills and list them under `skills:`; never write `skills/<name>/SKILL.md` paths, which do not exist in a user's project or an installed plugin. Other hosts receive the skills only. Preserve `resources/agents/` in the shipped repo so the installer can copy profiles into a project.
 
 ## 3. Register
 
@@ -31,7 +33,8 @@ python scripts/skills_tool.py check       # must end: ok (N skills), with no "sh
 ## 4. Ship
 
 - [ ] `git init`, commit, add the origin remote, push (repo name per 1)
-- [ ] Make the repository **public**: CI minutes are free on public repos and billed on private ones
+- [ ] MIT repos: make the repository **public** (CI minutes are free on public repos and billed on private ones). Proprietary repos: keep it private; users need git access to the repo to add the marketplace
+- [ ] Test the plugin locally: `claude plugin validate . --strict`, then `claude --plugin-dir .`
 - [ ] Enable Actions in Settings; the workflow runs on pushes to `main` and PRs
 - [ ] Set the GitHub "About" description and add topics (`agent-skills` at minimum)
 - [ ] Keep the setup files on your computer for future maintenance. Confirm `python scripts/skills_tool.py check` passes before publishing; it confirms setup-only files are ignored and absent from the Git index.
@@ -39,5 +42,6 @@ python scripts/skills_tool.py check       # must end: ok (N skills), with no "sh
 ## 5. Do not
 
 - Do not hand-edit the README catalogue between the markers
-- Do not add per-platform manifests until a platform needs one
+- Do not add manifests for other platforms until one needs them; `.claude-plugin/` is the only manifest this template ships
+- Do not put installed Codex briefs in a top-level `agents/` folder of the repo; Claude Code scans that folder as subagents. Keep briefs in `resources/agents/codex/`
 - Do not import project-specific facts into skills; skills read a project's own architecture at runtime

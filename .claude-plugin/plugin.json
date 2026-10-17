@@ -1,0 +1,9 @@
+{
+  "name": "<PLUGIN-NAME>",
+  "version": "0.1.0",
+  "description": "<ONE SENTENCE: what the skills do, for whom>",
+  "author": { "name": "<COPYRIGHT HOLDER>" },
+  "license": "MIT",
+  "repository": "https://github.com/<OWNER>/<REPO>",
+  "keywords": ["agent-skills"]
+}

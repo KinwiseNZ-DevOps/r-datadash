@@ -68,7 +68,14 @@ flowchart TD
 > [!TIP]
 > Install the router skill **plus every sibling skill it links to**; routers reference siblings by relative path.
 
-Copy or symlink the `skills/` subfolders you want into your agent's skills directory:
+**Claude Code plugin** (installs the skills and any agent profiles together):
+
+```text
+/plugin marketplace add <OWNER>/<REPO>
+/plugin install <PLUGIN-NAME>@<MARKETPLACE-NAME>
+```
+
+Or copy or symlink the `skills/` subfolders you want into your agent's skills directory:
 
 | Agent | Where skills live |
 |---|---|
@@ -118,7 +125,7 @@ This section applies only when agent definitions were supplied during setup. One
 python scripts/skills_tool.py check
 ```
 
-Checks: frontmatter, name/folder match, description length and trigger, body under 500 lines, every relative link resolves (including README.md and AGENTS.md), agent profile naming with no more than two profiles per host and exactly one `-workflow` main agent, at least 3 eval cases per skill, catalogue freshness, no project-specific terms from `reference-content/strip-terms.txt`, and no em or en dashes in file names or in any text outside `reference-content/`. After the starter skill is deleted it also rejects leftover placeholders and setup-only paths that are tracked by Git or not ignored. Stdlib only, no dependencies.
+Checks: frontmatter, name/folder match, description length and trigger, body under 500 lines, every relative link resolves (including README.md and AGENTS.md), agent profile naming with no more than two profiles per host and exactly one `-workflow` main agent, agent `skills:` entries that exist and no `skills/<name>/SKILL.md` paths in agent bodies, plugin manifests (`.claude-plugin/plugin.json` and `marketplace.json`: required fields, licence matches `LICENSE`, `agents` lists every Claude Code profile, no top-level `agents/` folder), at least 3 eval cases per skill, catalogue freshness, no project-specific terms from `reference-content/strip-terms.txt`, and no em or en dashes in file names or in any text outside `reference-content/`. After the starter skill is deleted it also rejects leftover placeholders and setup-only paths that are tracked by Git or not ignored. Stdlib only, no dependencies.
 
 ---
 
@@ -130,6 +137,7 @@ Checks: frontmatter, name/folder match, description length and trigger, body und
 
 ```
 skills/<name>/SKILL.md      one folder per skill (+ references/ where needed)
+.claude-plugin/             plugin.json and marketplace.json (Claude Code plugin)
 evals/cases.jsonl           3+ behavioural cases per skill
 resources/agents/             optional host profiles copied by installer
 scripts/install_agents.py     copy optional agent profiles into a project

@@ -1,0 +1,12 @@
+{
+  "name": "<MARKETPLACE-NAME>",
+  "owner": { "name": "<COPYRIGHT HOLDER>" },
+  "description": "<ONE SENTENCE: what this marketplace offers>",
+  "plugins": [
+    {
+      "name": "<PLUGIN-NAME>",
+      "source": "./",
+      "description": "<ONE SENTENCE: what the skills do, for whom>"
+    }
+  ]
+}
