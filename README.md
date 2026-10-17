@@ -1,5 +1,5 @@
 ```
-<Repo name rendered in the FIGlet ANSI Shadow font. Use ANSI Shadow only.>
+<Repo name rendered in the standard FIGlet ANSI Shadow font (pyfiglet "ansi_shadow"). One or two words per banner line, left-aligned with no indent, no trailing spaces, and no centring or widening.>
 ```
 
 <div align="center">
