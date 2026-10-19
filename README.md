@@ -1,16 +1,29 @@
 ```
-<Repo name rendered in the standard FIGlet ANSI Shadow font (pyfiglet "ansi_shadow"). One or two words per banner line, left-aligned with no indent, no trailing spaces, and no centring or widening.>
+██████╗
+██╔══██╗
+██████╔╝
+██╔══██╗
+██║  ██║
+╚═╝  ╚═╝
+
+██████╗  █████╗ ████████╗ █████╗ ██████╗  █████╗ ███████╗██╗  ██╗
+██╔══██╗██╔══██╗╚══██╔══╝██╔══██╗██╔══██╗██╔══██╗██╔════╝██║  ██║
+██║  ██║███████║   ██║   ███████║██║  ██║███████║███████╗███████║
+██║  ██║██╔══██║   ██║   ██╔══██║██║  ██║██╔══██║╚════██║██╔══██║
+██████╔╝██║  ██║   ██║   ██║  ██║██████╔╝██║  ██║███████║██║  ██║
+╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝
+
 ```
 
 <div align="center">
 
-# ⚡ <Repo Name>
+# ⚡ R DataDash
 
-**<One line: what these skills do, for whom>**
+**Skills that help an agent teach and build R dashboards, with the SQL and Power BI links around them, for students and lecturers.**
 
-[![Validate skills](https://github.com/<OWNER>/<REPO>/actions/workflows/validate.yml/badge.svg)](https://github.com/<OWNER>/<REPO>/actions/workflows/validate.yml)
+[![Validate skills](https://github.com/KinwiseNZ-DevOps/r-datadash/actions/workflows/validate.yml/badge.svg)](https://github.com/KinwiseNZ-DevOps/r-datadash/actions/workflows/validate.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Agent skills](https://img.shields.io/badge/agent_skills-1-8A2BE2)](https://agentskills.io)
+[![Agent skills](https://img.shields.io/badge/agent_skills-8-8A2BE2)](https://agentskills.io)
 [![Format](https://img.shields.io/badge/format-SKILL.md-orange)](https://agentskills.io/specification)
 [![Tooling](https://img.shields.io/badge/tooling-stdlib_only-success)](scripts/skills_tool.py)
 
@@ -30,9 +43,9 @@ Table of contents:
 ---
 
 > [!IMPORTANT]
-> **Principle: <the single sentence every skill in this repo must obey.>**
+> **Principle: Every dashboard number must trace back to data the learner can inspect, and the agent explains the why, not only the code.**
 
-<Two or three sentences: what problems the skills solve, what they are grounded in (official docs or authoritative sources), and that they follow the open [Agent Skills](https://agentskills.io/specification) format. Name the agents they work in, e.g. Claude Code, Codex, Cursor, Copilot, OpenCode, or any SKILL.md-compatible agent.>
+The skills cover Shiny, bs4Dash and Quarto dashboards, data preparation, database links, statistics, chart design and Power BI modelling. They are grounded in the official Shiny, Quarto, DBI and Microsoft Learn documentation, plus MIT-licensed community material credited below, and follow the open [Agent Skills](https://agentskills.io/specification) format. They work in Claude Code, Codex, Cursor, Copilot, OpenCode, or any SKILL.md-compatible agent.
 
 ---
 
@@ -42,7 +55,14 @@ Table of contents:
 <!-- catalogue:begin -->
 | Skill | Purpose |
 |---|---|
-| [`example-skill`](skills/example-skill/SKILL.md) | Placeholder skill demonstrating this repository's skill format: the gate, steps, hard rule phrasing and reference layout. |
+| [`powerbi-model-and-dax`](skills/powerbi-model-and-dax/SKILL.md) | Governs Power BI data models and DAX measures: star schema, relationships, date tables, storage modes, row-level security, and readable, fast DAX with variables and time intelligence. |
+| [`r-dashboard-design`](skills/r-dashboard-design/SKILL.md) | Governs how a dashboard looks and performs: choosing a chart, arranging the page, colour and accessibility, labelling, and speed habits for R and Power BI dashboards. |
+| [`r-data-prep`](skills/r-data-prep/SKILL.md) | Governs getting data ready for a dashboard in R: reading CSV, Excel and JSON, calling web APIs, scraping tables, cleaning, date handling, and the extract-transform-load script shape. |
+| [`r-datadash`](skills/r-datadash/SKILL.md) | Router and shared guardrails for building, explaining and checking data dashboards with R, plus the SQL and Power BI links around them, aimed at students and lecturers. |
+| [`r-quarto-dashboards`](skills/r-quarto-dashboards/SKILL.md) | Governs how to build and fix Quarto dashboards with R: the dashboard format, rows, columns, pages, tabsets, cards, sidebars, value boxes, and the optional Shiny server mode. |
+| [`r-shiny-dashboards`](skills/r-shiny-dashboards/SKILL.md) | Governs how to build and fix Shiny and bs4Dash dashboards in R: file layout, global setup, ui and server split, reactivity, value boxes, tabs, charts and static assets. |
+| [`r-sql-bridge`](skills/r-sql-bridge/SKILL.md) | Governs connecting R to a SQL database and handing data on to Power BI: DBI connections, safe credentials, reading and writing tables, parameterised queries, and choosing SQLite or PostgreSQL for teaching. |
+| [`r-stats-foundations`](skills/r-stats-foundations/SKILL.md) | Governs the statistics behind dashboards in R: mean, median, mode, variance, standard deviation, skewness, correlation, hypothesis tests and simple linear regression, and how to explain a result in plain words. |
 <!-- catalogue:end -->
 
 ---
@@ -52,13 +72,13 @@ Table of contents:
 
 ```mermaid
 flowchart TD
-    R["⚡ <router-skill><br/><what it routes and enforces>"]
-    R --> A["🔍 <skill-a><br/><one-line scope>"]
-    R --> B["🛠️ <skill-b><br/><one-line scope>"]
-    R --> C["✅ <skill-c><br/><one-line scope>"]
+    R["⚡ r-datadash<br/>routes and enforces the shared habits"]
+    R --> A["📥 r-data-prep<br/>load, clean, API, scrape"]
+    R --> B["🖥️ r-shiny-dashboards / r-quarto-dashboards<br/>build the dashboard"]
+    R --> C["🎨 r-dashboard-design<br/>chart, layout, speed"]
 ```
 
-<One sentence on the order or priority in which the skills usually apply. Delete this section and the diagram for a repo with a single skill.>
+Usually: data prep, then statistics (r-stats-foundations), then a dashboard tool, then design. r-sql-bridge and powerbi-model-and-dax join when a database or Power BI is involved.
 
 ---
 
@@ -71,9 +91,13 @@ flowchart TD
 **Claude Code plugin** (installs the skills and any agent profiles together):
 
 ```text
-/plugin marketplace add <OWNER>/<REPO>
-/plugin install <PLUGIN-NAME>@<MARKETPLACE-NAME>
+/plugin marketplace add KinwiseNZ-DevOps/r-datadash
+/plugin install r-datadash@r-datadash-marketplace
 ```
+**ChatGPT desktop plugin** (local, skills and bundled hooks):
+
+This repo has a portable `plugin.json` manifest and a repo marketplace at `.agents/plugins/marketplace.json`. Open this repo as a trusted project and restart ChatGPT desktop, then install **R DataDash** from the Plugins Directory. Review and trust bundled hook scripts before they run.
+
 
 Or copy or symlink the `skills/` subfolders you want into your agent's skills directory:
 
@@ -95,16 +119,16 @@ To install supplied Claude Code, GitHub Copilot or Codex profiles into a project
 **The flow** (this is all most people need):
 
 ```text
-1. "<first phrase>"     → <what happens>
-2. "<second phrase>"    → <what happens>
-3. "<third phrase>"     → <what happens>
+1. "Build me a Shiny dashboard from this CSV"     → Routes to the right skill and checks the result
+2. "Explain what this test result means"    → Routes to the right skill and checks the result
+3. "Review this dashboard for clarity"     → Routes to the right skill and checks the result
 ```
 
 **Short phrases that trigger each skill:**
 
 | Just say… | What you get | Skill used |
 |---|---|---|
-| `<short plain phrase>` | <what happens> | *<skill>* |
+| `Why is my chart frozen?` | Finds the cause and fixes it with a check | *r-shiny-dashboards* |
 
 > [!NOTE]
 > Skills also trigger on their own when your request matches. In Claude Code you can also invoke one explicitly with `/<skill-name>`, but the plain phrases above are shorter and work across every agent.
@@ -157,13 +181,14 @@ templates/                  local skill scaffolding; ignored and kept off GitHub
 ## 📌 Status and limits
 
 > [!NOTE]
-> - <Known limits, each dated, mirroring the "Known deliberate states" section of AGENTS.md.>
+> - Draft as of 18 October 2026: the skills are untested against live classroom use, and no skill covers Python or Tableau.
+> - Power BI and PostgreSQL guidance is condensed from the MIT-licensed [awesome-copilot](https://github.com/github/awesome-copilot) collection.
 > - Licensed under MIT (see [LICENSE](LICENSE)).
 
 ---
 
 <div align="center">
 
-**⚡ Built on the [Agent Skills](https://agentskills.io) open format · grounded in <link to the official docs or sources>**
+**⚡ Built on the [Agent Skills](https://agentskills.io) open format · grounded in [Shiny](https://shiny.posit.co/r/), [Quarto](https://quarto.org/docs/dashboards/) and [Microsoft Learn](https://learn.microsoft.com/power-bi/)**
 
 </div>

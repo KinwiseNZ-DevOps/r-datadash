@@ -1,9 +1,13 @@
 {
-  "name": "<PLUGIN-NAME>",
+  "name": "r-datadash",
   "version": "0.1.0",
-  "description": "<ONE SENTENCE: what the skills do, for whom>",
-  "author": { "name": "<COPYRIGHT HOLDER>" },
+  "description": "Skills for teaching and building R dashboards (Shiny, Quarto) with SQL and Power BI links, for students and lecturers, with a workflow agent",
+  "author": { "name": "KinWise Limited" },
   "license": "MIT",
-  "repository": "https://github.com/<OWNER>/<REPO>",
-  "keywords": ["agent-skills"]
+  "repository": "https://github.com/KinwiseNZ-DevOps/r-datadash",
+  "keywords": ["agent-skills", "r", "shiny", "quarto", "dashboards", "power-bi", "education"],
+  "agents": [
+    "./resources/agents/claude-code/skill-specific/r-datadash-workflow.md",
+    "./resources/agents/claude-code/skill-specific/r-datadash-debugger.md"
+  ]
 }

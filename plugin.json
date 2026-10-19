@@ -1,0 +1,31 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "r-datadash",
+  "version": "0.1.0",
+  "description": "Skills for teaching and building R dashboards (Shiny, Quarto) with SQL and Power BI links, for students and lecturers, with a workflow agent",
+  "author": {
+    "name": "KinWise Limited"
+  },
+  "repository": "https://github.com/KinwiseNZ-DevOps/r-datadash",
+  "license": "MIT",
+  "keywords": [
+    "agent-skills",
+    "r",
+    "shiny",
+    "quarto",
+    "dashboards",
+    "power-bi",
+    "education"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "R DataDash",
+        "shortDescription": "Skills for teaching and building R dashboards (Shiny, Quarto) with SQL and Power BI links, for...",
+        "longDescription": "Skills for teaching and building R dashboards (Shiny, Quarto) with SQL and Power BI links, for students and lecturers, with a workflow agent",
+        "developerName": "KinWise Limited",
+        "category": "Productivity"
+      }
+    }
+  }
+}

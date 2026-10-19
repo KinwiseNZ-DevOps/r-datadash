@@ -42,11 +42,12 @@ Checks: frontmatter, name/folder match, description length and trigger, body und
 
 - `skills/<name>/SKILL.md`: the only source of skill content. Folder name equals frontmatter `name`.
 - `resources/agents/`: optional, host-native profile sources consumed by `scripts/install_agents.py`. Shared agent names use the `shared-` namespace; skill-specific agent names use `<owning-skill-slug>-<role>`. No `*.agent.md` files for a host means there are no profiles to install for that host.
+- `plugin.json`: the portable Agent Plugins manifest for ChatGPT and Codex. `.agents/plugins/marketplace.json` exposes this repo as a local ChatGPT desktop marketplace.
 - `.claude-plugin/plugin.json` and `marketplace.json`: the Claude Code plugin manifest and single-plugin marketplace. The `agents` array lists each Claude Code profile under `resources/agents/claude-code/`. Reason: without the key, Claude Code scans a top-level `agents/` folder and would load Codex briefs as subagents.
 - `.github/agents/`, `.claude/agents/`, and `agents/codex/`: optional installed host profiles and Codex role briefs in a target project, never in this repo. The installer creates these folders only when it has profiles to copy and never replaces an existing different file.
-- New skills follow the house format that existing skills embody: folder name equals frontmatter `name`; frontmatter, gate, steps, hard rules. `<add repo-specific canonical sources, generated artefacts that must not be hand-edited, and editing rules, each with a reason>`
+- New skills follow the house format that existing skills embody: folder name equals frontmatter `name`; frontmatter, gate, steps, hard rules. Skill content is built from `reference-content/sources/` and official documentation, never from `reference-content/raw/`. Reason: raw material holds private names, paths and credentials.
 - `SETUP.md`, `templates/`, and `reference-content/` are local setup material that stays ignored and outside the Git index when a repo is published. Reason: the maintainer needs these files for future work, while public commits must exclude bootstrap material and private sources.
-- Custom to this repo: `<e.g. shared guardrails file paths, router links, doc-source rules>`
+- Custom to this repo: the router `r-datadash` links every sibling and names the `r-datadash-workflow` and `r-datadash-debugger` agents; the shared habits (no `setwd`, no secrets in code, numbers from data) live in the router's hard rules and are repeated by reference, not copied. Reason: one source of truth for the rules.
 
 ## Irreversible and shared actions
 
@@ -59,7 +60,7 @@ Checks: frontmatter, name/folder match, description length and trigger, body und
 
 ## Known deliberate states (dated)
 
-- `<record deliberate temporary states here, each with a date and a reason>`
+- 18 October 2026: skills were authored from condensed notes and one fetch of the Quarto docs; no skill has been run against a real student project yet. Reason: first draft awaiting classroom testing.
 
 ## Anti-drift close-out
 

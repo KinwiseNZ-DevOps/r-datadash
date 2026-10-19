@@ -1,12 +1,12 @@
 {
-  "name": "<MARKETPLACE-NAME>",
-  "owner": { "name": "<COPYRIGHT HOLDER>" },
-  "description": "<ONE SENTENCE: what this marketplace offers>",
+  "name": "r-datadash-marketplace",
+  "owner": { "name": "KinWise Limited" },
+  "description": "R dashboard skills for schools and universities",
   "plugins": [
     {
-      "name": "<PLUGIN-NAME>",
+      "name": "r-datadash",
       "source": "./",
-      "description": "<ONE SENTENCE: what the skills do, for whom>"
+      "description": "Skills for teaching and building R dashboards (Shiny, Quarto) with SQL and Power BI links, for students and lecturers, with a workflow agent"
     }
   ]
 }

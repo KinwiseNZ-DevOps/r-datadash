@@ -1,0 +1,56 @@
+---
+name: r-quarto-dashboards
+description: >
+  Governs how to build and fix Quarto dashboards with R: the dashboard
+  format, rows, columns, pages, tabsets, cards, sidebars, value boxes, and the
+  optional Shiny server mode. Use when writing or changing a .qmd dashboard,
+  fixing its layout, or deciding between a static and an interactive version.
+  Do not use for Shiny app structure (r-shiny-dashboards), data loading
+  (r-data-prep) or chart choice (r-dashboard-design).
+---
+
+# R Quarto Dashboards
+
+Stance: the heading-to-layout rules are frozen (they are Quarto's own); content and styling are flexible. Static output needs no server and is the default for teaching.
+
+## Agent dispatch
+
+Before handling a request, follow the agent selection in [r-datadash](../r-datadash/SKILL.md), including when this skill is invoked directly. Give the selected agent this skill's instructions. If no agent is available, continue yourself.
+
+## Gate
+
+| Situation | Action |
+|---|---|
+| Readers only look at numbers and charts | Static dashboard |
+| Readers must change inputs and see new results | Add `server: shiny` (needs a running server) |
+| The page is more of a report than a dashboard | Use a normal Quarto document |
+| Unsure about an option | Check the Quarto docs for the installed version |
+
+## Steps
+
+1. **Detect.** Open the `.qmd`. Check the YAML for `format: dashboard`, the heading levels, and which cells have `#| title:`. Run `quarto --version`; dashboards need Quarto 1.4 or newer.
+2. **Fix or build.**
+   - Level 1 heading = page. Level 2 heading = row (or column). Each code cell under it becomes a card.
+   - Switch direction with `format: dashboard: orientation: columns`, or per page with `# Name {orientation="columns"}`.
+   - Size with `## Row {height=60%}` or `## Column {width=40%}`.
+   - Tabs: `## Row {.tabset}` and `#| title: Name` in each cell.
+   - Sidebar: a level 1 heading with `{.sidebar}`.
+   - Every cell computes from real data loaded in the first chunk, and has a `#| title:`.
+   - Interactive mode: `server: shiny`, expensive loading in a chunk with `#| context: setup`, reactive code in `#| context: server`, and `plotOutput()` with `renderPlot()`.
+3. **Verify.** Run `quarto preview file.qmd` or `quarto render file.qmd`, open the result, and check each page. Say if rendering was not possible.
+
+## Hard rules
+
+- Replace placeholder cells (`plot(cars)`, empty chunks) before sharing. Mechanism: the page renders and looks finished; cause is starter code left in; fix is real data in every card. Reason: an empty card is a silent error.
+- Heading text of rows and columns is discarded. Do not rely on it for labels; use `#| title:`. Reason: Quarto drops it, so the label never shows.
+- Do not promise interactivity from a static render. Reason: inputs need `server: shiny` and a host that can run R.
+
+## References
+
+Official docs: https://quarto.org/docs/dashboards/ , https://quarto.org/docs/dashboards/layout.html , https://quarto.org/docs/dashboards/interactivity/shiny-r.html . Fetched 18 October 2026.
+
+## Next
+
+- Data to show: [r-data-prep](../r-data-prep/SKILL.md)
+- Chart and layout choices: [r-dashboard-design](../r-dashboard-design/SKILL.md)
+- Full app instead: [r-shiny-dashboards](../r-shiny-dashboards/SKILL.md)
