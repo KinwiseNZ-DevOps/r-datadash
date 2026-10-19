@@ -36,6 +36,7 @@ Before handling a request, follow the agent selection in [r-datadash](../r-datad
    - Tabs: `## Row {.tabset}` and `#| title: Name` in each cell.
    - Sidebar: a level 1 heading with `{.sidebar}`.
    - Every cell computes from real data loaded in the first chunk, and has a `#| title:`.
+   - Value boxes: `#| content: valuebox` with a cell returning `list(icon=, color=, value=)`. `color: "light"` gives the calm, neutral tile that matches the house style in [r-dashboard-design](../r-dashboard-design/SKILL.md); a contextual colour such as `"primary"` fills the whole tile solidly instead. Check that the chosen icon (a Bootstrap Icons name) renders fully inside the tile; a wide or tall icon such as `"rulers"` can clip against the box edge, where a squarer icon such as `"arrows-angle-expand"` fits cleanly.
    - Interactive mode: `server: shiny`, expensive loading in a chunk with `#| context: setup`, reactive code in `#| context: server`, and `plotOutput()` with `renderPlot()`.
 3. **Verify.** Run `quarto preview file.qmd` or `quarto render file.qmd`, open the result, and check each page. Say if rendering was not possible.
 

@@ -4,12 +4,12 @@ Use this when the user asks for a dashboard that looks modern and calm. It state
 
 ## The look
 
-1. **Neutral base, one accent.** Greys for surfaces and text, one accent colour for the current page and the main action. Set `bg`, `fg` and `primary` in `bs_theme()`; they change hundreds of defaults, so change little else.
+1. **Neutral base, one accent.** Greys for surfaces and text, one accent colour for the current page and the main action. Set `bg`, `fg` and `primary` in `bs_theme()` as hex codes or standard CSS colour names (for example `"#1a1a1a"` or `"white"`); an R graphics colour name such as `"grey10"` is not valid CSS and makes `bs_theme()` error out before the app starts. They change hundreds of defaults, so change little else.
 2. **Key-number tiles.** A small muted title with a small change figure at its right (sign included, adverse change in red), a large bold value below, and any unit in smaller type beside the value. Use `value_box(title, value, showcase, ...)` and fill `value` from `textOutput()` so the layout does not jump.
 3. **Quiet separation.** Light borders and small, even gaps. Avoid heavy shadows and thick outlines.
-4. **Room to breathe.** Padding before decoration. One typeface, for example `font_google("Inter")`, in two or three sizes.
+4. **Room to breathe.** Padding before decoration. One typeface, for example `font_google("Inter")`, in two or three sizes. A ggplot2 chart keeps its own font setting (`theme_minimal(base_family = ...)`); it does not pick up the app's `bs_theme()` font by itself, so if a chart should match an app-wide or user-chosen font, pass the same font name into `base_family` explicitly.
 5. **Grid that adapts.** Tiles in `layout_column_wrap(width = "250px", fill = FALSE)` wrap from four across to one. Main charts in `layout_columns(col_widths = c(8, 4))`.
-6. **Light and dark.** Define both themes up front and switch with `session$setCurrentTheme()`. Use `thematic::thematic_shiny()` so plots follow the theme.
+6. **Light and dark.** Use bslib's `input_dark_mode()` for the switch itself; it works and needs no extra wiring for the app's own Bootstrap chrome. Do not rely on `thematic::thematic_shiny()` alone to recolour a ggplot2 chart when the mode changes at runtime: tested with `thematic_shiny(session = session)` and the plot's render reading the mode input (so it does redraw), the chart still kept its light colours after switching to dark. The verified fix is to branch the plot's own colours on the mode input's value directly (`is_dark <- identical(input$<dark_mode_id>, "dark")`, then set `plot.background`, `panel.background`, `text` and `panel.grid` colours from that), inside the same `render*` that reads it. A user-facing accent-colour picker that calls `session$setCurrentTheme()` restyles the app's own controls (buttons, inputs, focus rings) correctly, but a `value_box` icon added with `shiny::icon()` does not follow it; recolour that icon from the same input if it must match.
 7. **The right shell.** `page_sidebar()` when filters apply to everything; `page_navbar()` with `nav_panel()` when there are a few separate views.
 8. **Change is never colour alone.** Pair red or green with a sign, an arrow or a word.
 
@@ -38,10 +38,11 @@ Prefer bslib for a new dashboard. Keep bs4Dash when the project already uses it 
 
 ## Checks
 
-- Open at laptop and phone width.
-- Switch to the dark theme and read every chart.
+- Open at laptop and phone width, and at one width in between (for example 800px). A sidebar plus wrapped tiles can clip a tile or force a horizontal scrollbar at a width neither "laptop" nor "phone" would catch.
+- Switch to the dark theme and read every chart: confirm the chart panel itself changed colour, not just the page around it.
 - Turn the accent colour to grey: does the page still make sense?
+- If a tile or chart title is wrapped to a fixed character width, check it again in the narrowest view the app actually renders at (a `plotOutput` resizes with the browser; a fixed-width export does not). The same wrap width that fits a wide export can overflow a narrow panel.
 
 ## Source
 
-Principles were read from a commercial UI kit the maintainer owns and from several dashboard template screenshots the maintainer supplied (a Tableau Accelerators template, an admin theme, a Coupler.io dashboard, and a KPI-design reference poster); no markup, branding, or image is reproduced here. See the maintainer's design notes, which are kept out of the public repo.
+Principles were read from a commercial UI kit the maintainer owns and from several dashboard template screenshots the maintainer supplied (a Tableau Accelerators template, an admin theme, a Coupler.io dashboard, and a KPI-design reference poster); no markup, branding, or image is reproduced here. See the maintainer's design notes, which are kept out of the public repo. The light/dark, accent-colour and font points were additionally verified by building and running a real bslib app with `input_dark_mode()`, a live accent-colour picker and a font picker, confirmed working and not working in each mode by hand.
