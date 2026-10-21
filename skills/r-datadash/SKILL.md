@@ -20,11 +20,12 @@ Stance: the habits are frozen (every number traces back to data the learner can 
 | Building or fixing a Shiny or bs4Dash app | [r-shiny-dashboards](../r-shiny-dashboards/SKILL.md) |
 | Building or fixing a Quarto dashboard | [r-quarto-dashboards](../r-quarto-dashboards/SKILL.md) |
 | Loading, cleaning, scraping or calling an API for data | [r-data-prep](../r-data-prep/SKILL.md) |
+| Reshaping a data frame with dplyr: select, filter, mutate, case_when, group and summarise | [r-dplyr-wrangling](../r-dplyr-wrangling/SKILL.md) |
 | Connecting R to a database or handing data to Power BI | [r-sql-bridge](../r-sql-bridge/SKILL.md) |
 | Statistics, tests, regression, explaining a result | [r-stats-foundations](../r-stats-foundations/SKILL.md) |
 | Which chart, layout, colours, speed | [r-dashboard-design](../r-dashboard-design/SKILL.md) |
 | Power BI model, relationships, DAX | [powerbi-model-and-dax](../powerbi-model-and-dax/SKILL.md) |
-| Task spans several rows above | Start at r-data-prep, then r-stats-foundations, then the dashboard tool skill, then r-dashboard-design |
+| Task spans several rows above | Start at r-data-prep, then r-dplyr-wrangling, then r-stats-foundations, then the dashboard tool skill, then r-dashboard-design |
 | Python, Excel-only or Tableau work | Say it is out of scope; offer the nearest R approach |
 
 ## Agent selection

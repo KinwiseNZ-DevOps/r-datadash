@@ -23,7 +23,7 @@
 
 [![Validate skills](https://github.com/KinwiseNZ-DevOps/r-datadash/actions/workflows/validate.yml/badge.svg)](https://github.com/KinwiseNZ-DevOps/r-datadash/actions/workflows/validate.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Agent skills](https://img.shields.io/badge/agent_skills-8-8A2BE2)](https://agentskills.io)
+[![Agent skills](https://img.shields.io/badge/agent_skills-9-8A2BE2)](https://agentskills.io)
 [![Format](https://img.shields.io/badge/format-SKILL.md-orange)](https://agentskills.io/specification)
 [![Tooling](https://img.shields.io/badge/tooling-stdlib_only-success)](scripts/skills_tool.py)
 
@@ -59,6 +59,7 @@ The skills cover Shiny, bs4Dash and Quarto dashboards, data preparation, databas
 | [`r-dashboard-design`](skills/r-dashboard-design/SKILL.md) | Governs how a dashboard looks and performs: choosing a chart, arranging the page, colour and accessibility, labelling, and speed habits for R and Power BI dashboards. |
 | [`r-data-prep`](skills/r-data-prep/SKILL.md) | Governs getting data ready for a dashboard in R: reading CSV, Excel and JSON, calling web APIs, scraping tables, cleaning, date handling, and the extract-transform-load script shape. |
 | [`r-datadash`](skills/r-datadash/SKILL.md) | Router and shared guardrails for building, explaining and checking data dashboards with R, plus the SQL and Power BI links around them, aimed at students and lecturers. |
+| [`r-dplyr-wrangling`](skills/r-dplyr-wrangling/SKILL.md) | Governs reshaping a data frame in R with dplyr before it feeds a dashboard: select and rename columns, filter rows (including missing values), make or recode columns with mutate and case_when, group and summarise, count, and work within groups. |
 | [`r-quarto-dashboards`](skills/r-quarto-dashboards/SKILL.md) | Governs how to build and fix Quarto dashboards with R: the dashboard format, rows, columns, pages, tabsets, cards, sidebars, value boxes, and the optional Shiny server mode. |
 | [`r-shiny-dashboards`](skills/r-shiny-dashboards/SKILL.md) | Governs how to build and fix Shiny and bs4Dash dashboards in R: file layout, global setup, ui and server split, reactivity, value boxes, tabs, charts and static assets. |
 | [`r-sql-bridge`](skills/r-sql-bridge/SKILL.md) | Governs connecting R to a SQL database and handing data on to Power BI: DBI connections, safe credentials, reading and writing tables, parameterised queries, and choosing SQLite or PostgreSQL for teaching. |
@@ -74,11 +75,12 @@ The skills cover Shiny, bs4Dash and Quarto dashboards, data preparation, databas
 flowchart TD
     R["⚡ r-datadash<br/>routes and enforces the shared habits"]
     R --> A["📥 r-data-prep<br/>load, clean, API, scrape"]
+    R --> W["🔧 r-dplyr-wrangling<br/>select, filter, recode, summarise"]
     R --> B["🖥️ r-shiny-dashboards / r-quarto-dashboards<br/>build the dashboard"]
     R --> C["🎨 r-dashboard-design<br/>chart, layout, speed"]
 ```
 
-Usually: data prep, then statistics (r-stats-foundations), then a dashboard tool, then design. r-sql-bridge and powerbi-model-and-dax join when a database or Power BI is involved.
+Usually: data prep, then dplyr wrangling, then statistics (r-stats-foundations), then a dashboard tool, then design. r-sql-bridge and powerbi-model-and-dax join when a database or Power BI is involved.
 
 ---
 
