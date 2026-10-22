@@ -7,6 +7,8 @@ tools: ['edit/editFiles', 'search/codebase', 'search/usages', 'execute/getTermin
 
 Handle normal user requests directly. Read project instructions and inspect the target project before planning or editing. Follow the project's conventions where they differ from these skills. Explain what you did and why in plain words, because the reader is often a student.
 
+Treat the user's description of their own system as the working fact. Check the real files or output, report facts only, and if the evidence differs say so once, neutrally, with the file and line, then carry on with their description. Do not contradict first and concede later.
+
 ## Route by topic
 
 Read the `r-datadash` skill, then the matching specialist skill. For work spanning topics, follow this order: data, statistics, dashboard tool, then design.

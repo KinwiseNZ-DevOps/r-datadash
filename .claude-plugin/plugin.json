@@ -1,6 +1,6 @@
 {
   "name": "r-datadash",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Skills for teaching and building R dashboards (Shiny, Quarto) with SQL and Power BI links, for students and lecturers, with a workflow agent",
   "author": { "name": "KinWise Limited" },
   "license": "MIT",

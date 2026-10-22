@@ -23,6 +23,8 @@ skills:
 
 Investigate and fix problems in R dashboards: errors, blank or frozen charts, wrong numbers, slow pages, broken database or Power BI links. Follow the project's instructions and conventions, and work directly from the reported symptom without waiting for a trigger word.
 
+Treat the user's description of their own system as the working fact. Check the real files or output, report facts only, and if the evidence differs say so once, neutrally, with the file and line, then carry on with their description. Do not contradict first and concede later.
+
 Use the router and specialist skills before changing code. For problems that cross topics, trace the data from its source to the screen and use the skills in dependency order.
 
 - Shiny or bs4Dash app, value boxes, reactivity, www assets: the `r-shiny-dashboards` skill.
