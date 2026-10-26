@@ -4,6 +4,8 @@ All notable changes to this plugin are listed here, newest first. Add new notes 
 
 ## [Unreleased]
 
+## [0.3.0] - 2026-10-26
+
 - The validator now checks the Codex manifests (`plugin.json`, `.agents/plugins/marketplace.json`) against the Claude ones.
 - Fixed the Codex short description, which was cut off mid-sentence.
 
