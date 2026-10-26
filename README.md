@@ -165,6 +165,7 @@ Checks: frontmatter, name/folder match, description length and trigger, body und
 skills/<name>/SKILL.md      one folder per skill (+ references/ where needed)
 .claude-plugin/             plugin.json and marketplace.json (Claude Code plugin)
 evals/cases.jsonl           3+ behavioural cases per skill
+evals/triggers.jsonl        triggering tests per skill: obvious, paraphrase, unrelated
 resources/agents/             optional host profiles copied by installer
 scripts/install_agents.py     copy optional agent profiles into a project
 scripts/skills_tool.py      validate, regenerate catalogue (stdlib only)

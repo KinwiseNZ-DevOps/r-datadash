@@ -13,6 +13,13 @@ description: >
 
 Stance: the reader's question decides the chart and the layout (frozen); the colours, fonts and tool are flexible.
 
+## Hard rules
+
+- Measure before tuning. Mechanism: guessing speeds up the wrong part; fix is a timing or Performance Analyzer reading before and after. Reason: unmeasured tuning adds complexity for no gain.
+- Do not truncate an axis to exaggerate a change. Reason: it misleads the reader.
+- Treat the quoted targets (load under ten seconds, interactions under three) as rules of thumb, not guarantees.
+- Never use colour alone to carry meaning. Reason: one in twelve men has a colour-vision difference.
+
 ## Agent dispatch
 
 Before handling a request, follow the agent selection in [r-datadash](../r-datadash/SKILL.md), including when this skill is invoked directly. Give the selected agent this skill's instructions. If no agent is available, continue yourself.
@@ -41,13 +48,6 @@ Before handling a request, follow the agent selection in [r-datadash](../r-datad
    - Speed in R: load data once, share filtered data with `reactive()`, aggregate before plotting, cache slow steps.
    - Speed in Power BI: measure with Performance Analyzer first, then cut visuals, shrink the model and simplify measures.
 3. **Verify.** Look at the page at laptop and phone width. Ask: can a new reader state the main message in ten seconds? Say what was not tested.
-
-## Hard rules
-
-- Measure before tuning. Mechanism: guessing speeds up the wrong part; fix is a timing or Performance Analyzer reading before and after. Reason: unmeasured tuning adds complexity for no gain.
-- Do not truncate an axis to exaggerate a change. Reason: it misleads the reader.
-- Treat the quoted targets (load under ten seconds, interactions under three) as rules of thumb, not guarantees.
-- Never use colour alone to carry meaning. Reason: one in twelve men has a colour-vision difference.
 
 ## References
 

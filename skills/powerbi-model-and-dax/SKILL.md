@@ -13,6 +13,13 @@ description: >
 
 Stance: a star schema with a proper date table is frozen; the storage mode and which measures exist are flexible. For product features that change often, check the current Microsoft Learn pages instead of trusting memory.
 
+## Hard rules
+
+- Build a star schema before writing measures. Mechanism: symptom is a total that changes with the wrong slicer; cause is mixed grain or a flat table; fix is clean facts and dimensions.
+- Prefer measures to calculated columns for numbers that aggregate. Reason: columns inflate the model.
+- Do not use bidirectional relationships by default. Reason: they slow queries and create ambiguous filters.
+- Never give security or licensing advice from memory; point to current Microsoft documentation.
+
 ## Agent dispatch
 
 Before handling a request, follow the agent selection in [r-datadash](../r-datadash/SKILL.md), including when this skill is invoked directly. Give the selected agent this skill's instructions. If no agent is available, continue yourself.
@@ -43,13 +50,6 @@ Before handling a request, follow the agent selection in [r-datadash](../r-datad
    - Role-playing dates: one date table, extra relationships inactive, called with `USERELATIONSHIP`.
    - Row-level security: filter by user; test each role.
 3. **Verify.** Check one measure against a hand-calculated total for one slice. Return each variable in turn to debug. Measure speed with Performance Analyzer. Say what was not checked.
-
-## Hard rules
-
-- Build a star schema before writing measures. Mechanism: symptom is a total that changes with the wrong slicer; cause is mixed grain or a flat table; fix is clean facts and dimensions.
-- Prefer measures to calculated columns for numbers that aggregate. Reason: columns inflate the model.
-- Do not use bidirectional relationships by default. Reason: they slow queries and create ambiguous filters.
-- Never give security or licensing advice from memory; point to current Microsoft documentation.
 
 ## References
 

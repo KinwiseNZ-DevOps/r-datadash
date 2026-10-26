@@ -13,6 +13,12 @@ description: >
 
 Stance: the heading-to-layout rules are frozen (they are Quarto's own); content and styling are flexible. Static output needs no server and is the default for teaching.
 
+## Hard rules
+
+- Replace placeholder cells (`plot(cars)`, empty chunks) before sharing. Mechanism: the page renders and looks finished; cause is starter code left in; fix is real data in every card. Reason: an empty card is a silent error.
+- Heading text of rows and columns is discarded. Do not rely on it for labels; use `#| title:`. Reason: Quarto drops it, so the label never shows.
+- Do not promise interactivity from a static render. Reason: inputs need `server: shiny` and a host that can run R.
+
 ## Agent dispatch
 
 Before handling a request, follow the agent selection in [r-datadash](../r-datadash/SKILL.md), including when this skill is invoked directly. Give the selected agent this skill's instructions. If no agent is available, continue yourself.
@@ -39,12 +45,6 @@ Before handling a request, follow the agent selection in [r-datadash](../r-datad
    - Value boxes: `#| content: valuebox` with a cell returning `list(icon=, color=, value=)`. `color: "light"` gives the calm, neutral tile that matches the house style in [r-dashboard-design](../r-dashboard-design/SKILL.md); a contextual colour such as `"primary"` fills the whole tile solidly instead. Check that the chosen icon (a Bootstrap Icons name) renders fully inside the tile; a wide or tall icon such as `"rulers"` can clip against the box edge, where a squarer icon such as `"arrows-angle-expand"` fits cleanly.
    - Interactive mode: `server: shiny`, expensive loading in a chunk with `#| context: setup`, reactive code in `#| context: server`, and `plotOutput()` with `renderPlot()`.
 3. **Verify.** Run `quarto preview file.qmd` or `quarto render file.qmd`, open the result, and check each page. Say if rendering was not possible.
-
-## Hard rules
-
-- Replace placeholder cells (`plot(cars)`, empty chunks) before sharing. Mechanism: the page renders and looks finished; cause is starter code left in; fix is real data in every card. Reason: an empty card is a silent error.
-- Heading text of rows and columns is discarded. Do not rely on it for labels; use `#| title:`. Reason: Quarto drops it, so the label never shows.
-- Do not promise interactivity from a static render. Reason: inputs need `server: shiny` and a host that can run R.
 
 ## References
 

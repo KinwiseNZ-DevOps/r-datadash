@@ -13,6 +13,13 @@ description: >
 
 Stance: state the question, the method and the assumptions before the answer (frozen); which function or package runs it is flexible.
 
+## Hard rules
+
+- State hypotheses and assumptions before reporting a p-value. Mechanism: a p-value alone is misread; fix is a sentence on what it means. Reason: a learner remembers the verdict, not the caveat.
+- Correlation is not causation, and a significant result is not a large or useful one. Report the size of the effect.
+- Do not call a test "proved". Say "the data support" or "do not support".
+- Use the learner's own data for examples, not made-up numbers, unless the example is labelled as made-up.
+
 ## Agent dispatch
 
 Before handling a request, follow the agent selection in [r-datadash](../r-datadash/SKILL.md), including when this skill is invoked directly. Give the selected agent this skill's instructions. If no agent is available, continue yourself.
@@ -36,13 +43,6 @@ Before handling a request, follow the agent selection in [r-datadash](../r-datad
    - Regression: `model <- lm(y ~ x, data = df)`, `summary(model)`, plot with `ggplot(df, aes(x, y)) + geom_point() + geom_smooth(method = "lm", se = FALSE)`.
    - Write the result as a sentence: what was tested, the estimate, the p-value in words, and what it does not show.
 3. **Verify.** Re-run with a fixed seed if random. Check one number by hand on a small sample. Say which assumptions were not checked.
-
-## Hard rules
-
-- State hypotheses and assumptions before reporting a p-value. Mechanism: a p-value alone is misread; fix is a sentence on what it means. Reason: a learner remembers the verdict, not the caveat.
-- Correlation is not causation, and a significant result is not a large or useful one. Report the size of the effect.
-- Do not call a test "proved". Say "the data support" or "do not support".
-- Use the learner's own data for examples, not made-up numbers, unless the example is labelled as made-up.
 
 ## References
 

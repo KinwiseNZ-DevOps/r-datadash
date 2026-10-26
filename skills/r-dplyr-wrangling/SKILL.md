@@ -15,6 +15,15 @@ description: >
 
 Stance: check the data before and after every verb (frozen); base R, dplyr or data.table is flexible and the project's style wins. Teach one verb at a time, run it, look at the output, then combine.
 
+## Hard rules
+
+- Never filter with `== NA` or `== "NA"`. Mechanism: symptom is zero rows; cause is that a missing value is not equal to anything; fix is `is.na()`. Reason: the learner would conclude the data is empty.
+- Never leave a `case_when()` without a default when unmatched rows matter. Mechanism: unmatched rows become `NA` and drop out of later counts. Fix: `.default = "Other"` or an explicit check.
+- Never drop rows silently. Mechanism: `na.omit()` and `drop_na()` change the totals a dashboard shows; fix is to count the rows before and after and say so.
+- Do not leave data grouped. Mechanism: a grouped table makes later `summarise()`, `mutate()` and `slice()` run per group and gives odd totals.
+- Keep the original column until the new one is checked. Mechanism: overwriting loses the evidence needed to find a wrong rule.
+- Use made-up or the learner's own data for examples, and label made-up data as such. Reason: real health records are personal.
+
 ## Agent dispatch
 
 Before handling a request, follow the agent selection in [r-datadash](../r-datadash/SKILL.md), including when this skill is invoked directly. Give the selected agent this skill's instructions. If no agent is available, continue yourself.
@@ -56,15 +65,6 @@ Before handling a request, follow the agent selection in [r-datadash](../r-datad
 
 Input: "My filter for adults returns nothing, and age_group is NA for some rows."
 Output: the age column is text, or has `NA` values that `<` cannot compare. Convert it to numeric on purpose, add a rule or label for `NA`, put the rules in order from the most specific, and report how many rows ended up in each group so a missing group is visible.
-
-## Hard rules
-
-- Never filter with `== NA` or `== "NA"`. Mechanism: symptom is zero rows; cause is that a missing value is not equal to anything; fix is `is.na()`. Reason: the learner would conclude the data is empty.
-- Never leave a `case_when()` without a default when unmatched rows matter. Mechanism: unmatched rows become `NA` and drop out of later counts. Fix: `.default = "Other"` or an explicit check.
-- Never drop rows silently. Mechanism: `na.omit()` and `drop_na()` change the totals a dashboard shows; fix is to count the rows before and after and say so.
-- Do not leave data grouped. Mechanism: a grouped table makes later `summarise()`, `mutate()` and `slice()` run per group and gives odd totals.
-- Keep the original column until the new one is checked. Mechanism: overwriting loses the evidence needed to find a wrong rule.
-- Use made-up or the learner's own data for examples, and label made-up data as such. Reason: real health records are personal.
 
 ## References
 

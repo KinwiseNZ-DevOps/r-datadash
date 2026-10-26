@@ -1,0 +1,27 @@
+{"skill": "powerbi-model-and-dax", "type": "obvious", "query": "Write a DAX measure for year-to-date sales and fix my star schema."}
+{"skill": "powerbi-model-and-dax", "type": "paraphrase", "query": "My Power BI report is slow and the totals are wrong when I filter by date."}
+{"skill": "powerbi-model-and-dax", "type": "unrelated", "query": "Choose a chart type for monthly revenue."}
+{"skill": "r-dashboard-design", "type": "obvious", "query": "Which chart should I use and how do I lay out the page for clarity?"}
+{"skill": "r-dashboard-design", "type": "paraphrase", "query": "Our dashboard is slow and hard to read for new users. What should we change?"}
+{"skill": "r-dashboard-design", "type": "unrelated", "query": "Write a dplyr pipeline that groups and summarises sales."}
+{"skill": "r-data-prep", "type": "obvious", "query": "Read a CSV and an Excel file in R and clean them into one tidy data frame."}
+{"skill": "r-data-prep", "type": "paraphrase", "query": "I need to pull data from a web API and tidy it before it goes to a dashboard."}
+{"skill": "r-data-prep", "type": "unrelated", "query": "Connect R to a PostgreSQL database."}
+{"skill": "r-datadash", "type": "obvious", "query": "Help me build an R dashboard for my students."}
+{"skill": "r-datadash", "type": "paraphrase", "query": "I am a lecturer and need a simple data dashboard that connects to a database. Where do I start?"}
+{"skill": "r-datadash", "type": "unrelated", "query": "Build a Python dashboard with Dash."}
+{"skill": "r-dplyr-wrangling", "type": "obvious", "query": "My dplyr filter returns zero rows and the recoded column has NA values."}
+{"skill": "r-dplyr-wrangling", "type": "paraphrase", "query": "Show me how to count and summarise sales by group in R, keeping all groups."}
+{"skill": "r-dplyr-wrangling", "type": "unrelated", "query": "Read this JSON file from a web API."}
+{"skill": "r-quarto-dashboards", "type": "obvious", "query": "Build a Quarto dashboard with columns, cards and value boxes."}
+{"skill": "r-quarto-dashboards", "type": "paraphrase", "query": "Should my report be a static page or interactive? Set it up as a dashboard document."}
+{"skill": "r-quarto-dashboards", "type": "unrelated", "query": "Write a Shiny server function with reactive inputs."}
+{"skill": "r-shiny-dashboards", "type": "obvious", "query": "Fix my Shiny bs4Dash app: the value box and plotly chart do not update."}
+{"skill": "r-shiny-dashboards", "type": "paraphrase", "query": "My interactive R app is not reacting when I change the inputs."}
+{"skill": "r-shiny-dashboards", "type": "unrelated", "query": "Create a Quarto dashboard with tabsets."}
+{"skill": "r-sql-bridge", "type": "obvious", "query": "Write dbConnect code to save a data frame into SQLite and query it from R."}
+{"skill": "r-sql-bridge", "type": "paraphrase", "query": "How do I keep database passwords safe and feed the tables into Power BI?"}
+{"skill": "r-sql-bridge", "type": "unrelated", "query": "Compute the mean and standard deviation of this column."}
+{"skill": "r-stats-foundations", "type": "obvious", "query": "Run a t-test in R and explain the result in plain words."}
+{"skill": "r-stats-foundations", "type": "paraphrase", "query": "What does a correlation of 0.7 mean, and how do I fit a simple regression line?"}
+{"skill": "r-stats-foundations", "type": "unrelated", "query": "Clean the date column of my CSV."}

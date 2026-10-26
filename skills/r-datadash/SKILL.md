@@ -13,6 +13,14 @@ description: >
 
 Stance: the habits are frozen (every number traces back to data the learner can inspect, nothing depends on one person's computer, the agent explains why), the tool choices inside them are flexible. This skill routes to the right specialist and enforces the guardrails every change must satisfy.
 
+## Hard rules
+
+- Every number on screen comes from data the learner can inspect. Mechanism: symptom is a tile that never changes; cause is a placeholder left in (`10*2`, `plot(cars)`); fix is to compute it from the loaded data and show where. Reason: a dashboard that looks right but is not tied to data teaches the wrong habit.
+- No `setwd()` with a personal path, no passwords in code, no `rm(list = ls())`. Mechanism: the script runs on one computer only, or wipes the next person's session. Fix: an RStudio Project, `here::here()`, and environment variables. Reason: classroom code must run on every student's machine.
+- Never invent package names, functions or options. Check the installed version or the official docs when unsure. Reason: a fake function costs a learner an hour.
+- Make the smallest correct change and keep the project's own style. Reason: a student must be able to read the diff.
+- Treat the user's description of their own system as the working fact. Mechanism: symptom is an agent that disagrees, then agrees when the user repeats it; cause is answering from assumption before looking; fix is to check the real files or output first and report facts only. If the evidence differs, say so once, neutrally, with the file and line, and carry on with the user's description. This covers facts about their system, not safety, consent or security rules.
+
 ## Gate
 
 | Situation | Action |
@@ -38,14 +46,6 @@ When this skill or a sibling is invoked, use the `r-datadash-workflow` profile w
 2. **Route.** Pick the specialist from the gate table and follow it. For multi-part work, go in dependency order: data, statistics, dashboard, design.
 3. **Explain.** Say in plain words what changed and why. A learner should be able to repeat the reason.
 4. **Verify.** Run the dashboard or render the document and look at the result. Run the project's tests if any. Say what was checked and what was not.
-
-## Hard rules
-
-- Every number on screen comes from data the learner can inspect. Mechanism: symptom is a tile that never changes; cause is a placeholder left in (`10*2`, `plot(cars)`); fix is to compute it from the loaded data and show where. Reason: a dashboard that looks right but is not tied to data teaches the wrong habit.
-- No `setwd()` with a personal path, no passwords in code, no `rm(list = ls())`. Mechanism: the script runs on one computer only, or wipes the next person's session. Fix: an RStudio Project, `here::here()`, and environment variables. Reason: classroom code must run on every student's machine.
-- Never invent package names, functions or options. Check the installed version or the official docs when unsure. Reason: a fake function costs a learner an hour.
-- Make the smallest correct change and keep the project's own style. Reason: a student must be able to read the diff.
-- Treat the user's description of their own system as the working fact. Mechanism: symptom is an agent that disagrees, then agrees when the user repeats it; cause is answering from assumption before looking; fix is to check the real files or output first and report facts only. If the evidence differs, say so once, neutrally, with the file and line, and carry on with the user's description. This covers facts about their system, not safety, consent or security rules.
 
 ## Next
 

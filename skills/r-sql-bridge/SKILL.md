@@ -13,6 +13,13 @@ description: >
 
 Stance: the connect, use, disconnect order and credentials outside code are frozen; the database engine and driver are flexible. SQLite needs no server and suits classrooms; PostgreSQL suits larger shared work.
 
+## Hard rules
+
+- No password, token or `root` login in code. Mechanism: symptom is a secret in git history; cause is a literal in a script; fix is `Sys.getenv()` and a limited user. Reason: pushed secrets cannot be recalled.
+- Parameterise queries. Mechanism: SQL injection through pasted text; fix is `params`.
+- `overwrite = TRUE` and `DROP`/`DELETE` need explicit confirmation. Reason: they destroy data that may have no backup.
+- Check the current CRAN status of a driver before recommending it; older drivers such as RMySQL are not recommended.
+
 ## Agent dispatch
 
 Before handling a request, follow the agent selection in [r-datadash](../r-datadash/SKILL.md), including when this skill is invoked directly. Give the selected agent this skill's instructions. If no agent is available, continue yourself.
@@ -36,13 +43,6 @@ Before handling a request, follow the agent selection in [r-datadash](../r-datad
    - Write with `dbWriteTable(con, "name", df, append = TRUE)`. Use `overwrite = TRUE` only on purpose, after saying which table it replaces.
    - Power BI hand-off: tell the learner to create a read-only database user, then connect Power BI to the tables with its database connector, and to model them as a star schema ([powerbi-model-and-dax](../powerbi-model-and-dax/SKILL.md)).
 3. **Verify.** Count rows before and after a write. Run one query and compare a total with the data frame. Say if the database could not be reached.
-
-## Hard rules
-
-- No password, token or `root` login in code. Mechanism: symptom is a secret in git history; cause is a literal in a script; fix is `Sys.getenv()` and a limited user. Reason: pushed secrets cannot be recalled.
-- Parameterise queries. Mechanism: SQL injection through pasted text; fix is `params`.
-- `overwrite = TRUE` and `DROP`/`DELETE` need explicit confirmation. Reason: they destroy data that may have no backup.
-- Check the current CRAN status of a driver before recommending it; older drivers such as RMySQL are not recommended.
 
 ## References
 

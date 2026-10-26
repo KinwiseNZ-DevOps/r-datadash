@@ -13,6 +13,13 @@ description: >
 
 Stance: the extract, transform, load order and the check after each step are frozen; the packages (base R, tidyverse, data.table) are flexible and the project's style wins.
 
+## Hard rules
+
+- Check the HTTP status before parsing. Mechanism: symptom is a cryptic parse error; cause is an error page parsed as data; fix is to stop on any status other than 200 and show it.
+- Do not hide missing data. Mechanism: symptom is a mean that looks fine; cause is rows silently dropped by `na.rm = TRUE`; fix is to count and report them. Reason: the dashboard will repeat whatever the data prep hid.
+- No `setwd()` and no `rm(list = ls())` in scripts. Use an RStudio Project and `here::here()`.
+- Keep keys, tokens and base URLs in one config place or environment variables, never pasted through the script.
+
 ## Agent dispatch
 
 Before handling a request, follow the agent selection in [r-datadash](../r-datadash/SKILL.md), including when this skill is invoked directly. Give the selected agent this skill's instructions. If no agent is available, continue yourself.
@@ -35,13 +42,6 @@ Before handling a request, follow the agent selection in [r-datadash](../r-datad
    - Load: write a tidy file (`readr::write_csv()`), or hand to [r-sql-bridge](../r-sql-bridge/SKILL.md).
    - Scraping: `rvest::read_html(url) |> html_element("table") |> html_table()`; if the first row is the header, move it into the names.
 3. **Verify.** After each stage print row counts and `str()`. Compare one total with the source. Say what was not checked.
-
-## Hard rules
-
-- Check the HTTP status before parsing. Mechanism: symptom is a cryptic parse error; cause is an error page parsed as data; fix is to stop on any status other than 200 and show it.
-- Do not hide missing data. Mechanism: symptom is a mean that looks fine; cause is rows silently dropped by `na.rm = TRUE`; fix is to count and report them. Reason: the dashboard will repeat whatever the data prep hid.
-- No `setwd()` and no `rm(list = ls())` in scripts. Use an RStudio Project and `here::here()`.
-- Keep keys, tokens and base URLs in one config place or environment variables, never pasted through the script.
 
 ## References
 

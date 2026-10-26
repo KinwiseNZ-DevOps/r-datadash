@@ -13,6 +13,13 @@ description: >
 
 Stance: the split between data, ui and server is frozen; the packages (plain Shiny, bs4Dash, shinydashboard, bslib) are flexible and the project's existing choice wins.
 
+## Hard rules
+
+- Do not read files or query a database inside a `render*` call on every redraw. Mechanism: the app slows with each click; cause is repeated work; fix is to load once in `global.R` or in a `reactive()`.
+- Do not export a chart to HTML and embed it in an iframe when an input should change it. Mechanism: the chart stays frozen; fix is `renderPlotly` or `renderPlot`. Reason: interactivity is the point of Shiny.
+- No `setwd()`; use relative paths from the app folder. Reason: the app must run on any machine.
+- Never put a password or API key in `ui.R`, `server.R` or `global.R`. Use environment variables ([r-sql-bridge](../r-sql-bridge/SKILL.md)).
+
 ## Agent dispatch
 
 Before handling a request, follow the agent selection in [r-datadash](../r-datadash/SKILL.md), including when this skill is invoked directly. Give the selected agent this skill's instructions. If no agent is available, continue yourself.
@@ -38,13 +45,6 @@ Before handling a request, follow the agent selection in [r-datadash](../r-datad
    - Charts react to inputs: `plotlyOutput("trend")` with `output$trend <- renderPlotly({ ... })`. Use `reactive()` for a filtered data set that several outputs share.
    - Put images and CSS in `www/` and refer to them without the `www/` prefix. Compile SCSS with the `sass` package; `includeCSS()` only accepts plain CSS.
 3. **Verify.** Run the app (`shiny::runApp()`), click every menu item and input, and compare one tile with a number computed by hand in the console.
-
-## Hard rules
-
-- Do not read files or query a database inside a `render*` call on every redraw. Mechanism: the app slows with each click; cause is repeated work; fix is to load once in `global.R` or in a `reactive()`.
-- Do not export a chart to HTML and embed it in an iframe when an input should change it. Mechanism: the chart stays frozen; fix is `renderPlotly` or `renderPlot`. Reason: interactivity is the point of Shiny.
-- No `setwd()`; use relative paths from the app folder. Reason: the app must run on any machine.
-- Never put a password or API key in `ui.R`, `server.R` or `global.R`. Use environment variables ([r-sql-bridge](../r-sql-bridge/SKILL.md)).
 
 ## References
 
