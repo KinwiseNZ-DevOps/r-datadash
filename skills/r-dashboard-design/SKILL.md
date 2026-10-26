@@ -1,12 +1,12 @@
 ---
 name: r-dashboard-design
 description: >
-  Governs how a dashboard looks and performs: choosing a chart, arranging the
-  page, colour and accessibility, labelling, and speed habits for R and
-  Power BI dashboards. Use when deciding which chart to use, laying out a
-  page, fixing an unreadable or slow dashboard, or reviewing one for clarity.
-  Do not use for tool syntax (r-shiny-dashboards, r-quarto-dashboards,
-  powerbi-model-and-dax) or for the statistics itself (r-stats-foundations).
+  Use when deciding which chart to use, laying out a page, fixing an unreadable
+  or slow dashboard, or reviewing one for clarity. Governs how a dashboard looks
+  and performs: choosing a chart, arranging the page, colour and accessibility,
+  labelling, and speed habits for R and Power BI dashboards. Do not use for tool
+  syntax (r-shiny-dashboards, r-quarto-dashboards, powerbi-model-and-dax) or for
+  the statistics itself (r-stats-foundations).
 ---
 
 # R Dashboard Design

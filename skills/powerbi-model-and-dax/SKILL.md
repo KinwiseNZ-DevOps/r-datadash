@@ -1,11 +1,11 @@
 ---
 name: powerbi-model-and-dax
 description: >
-  Governs Power BI data models and DAX measures: star schema, relationships,
-  date tables, storage modes, row-level security, and readable, fast DAX with
-  variables and time intelligence. Use when designing or fixing a Power BI
-  model, writing or debugging a DAX measure, or preparing database tables for
-  Power BI from R. Do not use for report layout and colour (r-dashboard-design),
+  Use when designing or fixing a Power BI model, writing or debugging a DAX
+  measure, or preparing database tables for Power BI from R. Governs Power BI
+  data models and DAX measures: star schema, relationships, date tables, storage
+  modes, row-level security, and readable, fast DAX with variables and time
+  intelligence. Do not use for report layout and colour (r-dashboard-design),
   database connections in R (r-sql-bridge) or R code.
 ---
 

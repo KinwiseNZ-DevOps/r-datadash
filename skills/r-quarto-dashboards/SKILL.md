@@ -1,12 +1,12 @@
 ---
 name: r-quarto-dashboards
 description: >
-  Governs how to build and fix Quarto dashboards with R: the dashboard
-  format, rows, columns, pages, tabsets, cards, sidebars, value boxes, and the
-  optional Shiny server mode. Use when writing or changing a .qmd dashboard,
-  fixing its layout, or deciding between a static and an interactive version.
-  Do not use for Shiny app structure (r-shiny-dashboards), data loading
-  (r-data-prep) or chart choice (r-dashboard-design).
+  Use when writing or changing a .qmd dashboard, fixing its layout, or deciding
+  between a static and an interactive version. Governs how to build and fix
+  Quarto dashboards with R: the dashboard format, rows, columns, pages, tabsets,
+  cards, sidebars, value boxes, and the optional Shiny server mode. Do not use
+  for Shiny app structure (r-shiny-dashboards), data loading (r-data-prep) or
+  chart choice (r-dashboard-design).
 ---
 
 # R Quarto Dashboards

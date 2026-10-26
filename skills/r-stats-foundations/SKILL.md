@@ -1,12 +1,12 @@
 ---
 name: r-stats-foundations
 description: >
-  Governs the statistics behind dashboards in R: mean, median, mode,
-  variance, standard deviation, skewness, correlation, hypothesis tests and
-  simple linear regression, and how to explain a result in plain words. Use
-  when computing a summary, running a z-test or t-test, fitting lm(), or
-  explaining what a number means to a learner. Do not use for loading data
-  (r-data-prep), chart choice (r-dashboard-design) or machine learning.
+  Use when computing a summary, running a z-test or t-test, fitting lm(), or
+  explaining what a number means to a learner. Governs the statistics behind
+  dashboards in R: mean, median, mode, variance, standard deviation, skewness,
+  correlation, hypothesis tests and simple linear regression, and how to explain
+  a result in plain words. Do not use for loading data (r-data-prep), chart
+  choice (r-dashboard-design) or machine learning.
 ---
 
 # R Stats Foundations

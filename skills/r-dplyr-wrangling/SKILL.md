@@ -1,14 +1,12 @@
 ---
 name: r-dplyr-wrangling
 description: >
-  Governs reshaping a data frame in R with dplyr before it feeds a dashboard:
-  select and rename columns, filter rows (including missing values), make or
-  recode columns with mutate and case_when, group and summarise, count, and
-  work within groups. Use when writing or fixing dplyr code, when a filter
-  returns zero rows or a recoded column has unexpected NA, when a grouped
-  summary has missing groups or stays grouped, or when explaining these verbs
-  to a learner. Do not use for reading files or APIs (r-data-prep), statistical
-  tests (r-stats-foundations) or chart code (r-dashboard-design).
+  Use when writing or fixing dplyr code, when a filter returns zero rows or a
+  recoded column has unexpected NA, when a grouped summary has missing groups or
+  stays grouped, or when explaining these verbs to a learner. Governs reshaping
+  a data frame in R with dplyr before it feeds a dashboard. Do not use for
+  reading files or APIs (r-data-prep), statistical tests (r-stats-foundations)
+  or chart code (r-dashboard-design).
 ---
 
 # R dplyr wrangling

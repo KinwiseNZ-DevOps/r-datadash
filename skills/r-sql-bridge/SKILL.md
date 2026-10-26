@@ -1,12 +1,12 @@
 ---
 name: r-sql-bridge
 description: >
-  Governs connecting R to a SQL database and handing data on to Power BI:
-  DBI connections, safe credentials, reading and writing tables, parameterised
-  queries, and choosing SQLite or PostgreSQL for teaching. Use when writing
-  dbConnect code, moving a data frame into a database, querying from a
-  dashboard, or feeding Power BI from a database. Do not use for cleaning data
-  (r-data-prep) or Power BI modelling and DAX (powerbi-model-and-dax).
+  Use when writing dbConnect code, moving a data frame into a database, querying
+  from a dashboard, or feeding Power BI from a database. Governs connecting R to
+  a SQL database and handing data on to Power BI: DBI connections, safe
+  credentials, reading and writing tables, parameterised queries, and choosing
+  SQLite or PostgreSQL for teaching. Do not use for cleaning data (r-data-prep)
+  or Power BI modelling and DAX (powerbi-model-and-dax).
 ---
 
 # R SQL Bridge

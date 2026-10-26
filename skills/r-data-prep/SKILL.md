@@ -1,12 +1,12 @@
 ---
 name: r-data-prep
 description: >
-  Governs getting data ready for a dashboard in R: reading CSV, Excel and
-  JSON, calling web APIs, scraping tables, cleaning, date handling, and the
-  extract-transform-load script shape. Use when loading or cleaning data,
-  calling an API with httr and jsonlite, scraping with rvest, or turning raw
-  files into one tidy data frame. Do not use for database storage
-  (r-sql-bridge), statistical tests (r-stats-foundations) or dashboard layout.
+  Use when loading or cleaning data, calling an API with httr and jsonlite,
+  scraping with rvest, or turning raw files into one tidy data frame. Governs
+  getting data ready for a dashboard in R: reading CSV, Excel and JSON, calling
+  web APIs, scraping tables, cleaning, date handling, and the extract-transform-
+  load script shape. Do not use for database storage (r-sql-bridge), statistical
+  tests (r-stats-foundations) or dashboard layout.
 ---
 
 # R Data Prep

@@ -1,11 +1,11 @@
 ---
 name: r-datadash
 description: >
-  Router and shared guardrails for building, explaining and checking data
-  dashboards with R, plus the SQL and Power BI links around them, aimed at
-  students and lecturers. Use when a task touches an R dashboard (Shiny,
-  bs4Dash, Quarto), data preparation for one, a database link, Power BI, or
-  when it is unclear which specialist skill applies. Do not use for Python
+  Use when a task touches an R dashboard (Shiny, bs4Dash, Quarto), data
+  preparation for one, a database link, Power BI, or when it is unclear which
+  specialist skill applies. Router and shared guardrails for building,
+  explaining and checking data dashboards with R, plus the SQL and Power BI
+  links around them, aimed at students and lecturers. Do not use for Python
   dashboards or for non-dashboard R work such as package development.
 ---
 

@@ -1,10 +1,10 @@
 ---
 name: r-shiny-dashboards
 description: >
-  Governs how to build and fix Shiny and bs4Dash dashboards in R: file layout,
-  global setup, ui and server split, reactivity, value boxes, tabs, charts and
-  static assets. Use when writing or changing a Shiny app, a bs4Dash page, a
-  value box, a plotly or leaflet output, or the www folder. Do not use for
+  Use when writing or changing a Shiny app, a bs4Dash page, a value box, a
+  plotly or leaflet output, or the www folder. Governs how to build and fix
+  Shiny and bs4Dash dashboards in R: file layout, global setup, ui and server
+  split, reactivity, value boxes, tabs, charts and static assets. Do not use for
   Quarto dashboards (r-quarto-dashboards), data loading (r-data-prep) or chart
   and layout choices (r-dashboard-design).
 ---
