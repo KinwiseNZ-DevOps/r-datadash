@@ -21,7 +21,7 @@
     "com.openai": {
       "interface": {
         "displayName": "R DataDash",
-        "shortDescription": "Skills for teaching and building R dashboards (Shiny, Quarto) with SQL and Power BI links, for...",
+        "shortDescription": "Teach and build R dashboards with SQL and Power BI links.",
         "longDescription": "Skills for teaching and building R dashboards (Shiny, Quarto) with SQL and Power BI links, for students and lecturers, with a workflow agent",
         "developerName": "KinWise Limited",
         "category": "Productivity"
