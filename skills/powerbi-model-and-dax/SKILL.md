@@ -19,6 +19,7 @@ Stance: a star schema with a proper date table is frozen; the storage mode and w
 - Prefer measures to calculated columns for numbers that aggregate. Reason: columns inflate the model.
 - Do not use bidirectional relationships by default. Reason: they slow queries and create ambiguous filters.
 - Never give security or licensing advice from memory; point to current Microsoft documentation.
+- Act only on what the user asked. Before answering or changing anything, open the relevant files and check what is already done; report only what you checked, never guess, and do not redo finished work. Reason: guesses and repeated work waste the user's credit.
 
 ## Agent dispatch
 

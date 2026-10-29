@@ -19,6 +19,7 @@ Stance: the connect, use, disconnect order and credentials outside code are froz
 - Parameterise queries. Mechanism: SQL injection through pasted text; fix is `params`.
 - `overwrite = TRUE` and `DROP`/`DELETE` need explicit confirmation. Reason: they destroy data that may have no backup.
 - Check the current CRAN status of a driver before recommending it; older drivers such as RMySQL are not recommended.
+- Act only on what the user asked. Before answering or changing anything, open the relevant files and check what is already done; report only what you checked, never guess, and do not redo finished work. Reason: guesses and repeated work waste the user's credit.
 
 ## Agent dispatch
 

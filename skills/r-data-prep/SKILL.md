@@ -19,6 +19,7 @@ Stance: the extract, transform, load order and the check after each step are fro
 - Do not hide missing data. Mechanism: symptom is a mean that looks fine; cause is rows silently dropped by `na.rm = TRUE`; fix is to count and report them. Reason: the dashboard will repeat whatever the data prep hid.
 - No `setwd()` and no `rm(list = ls())` in scripts. Use an RStudio Project and `here::here()`.
 - Keep keys, tokens and base URLs in one config place or environment variables, never pasted through the script.
+- Act only on what the user asked. Before answering or changing anything, open the relevant files and check what is already done; report only what you checked, never guess, and do not redo finished work. Reason: guesses and repeated work waste the user's credit.
 
 ## Agent dispatch
 

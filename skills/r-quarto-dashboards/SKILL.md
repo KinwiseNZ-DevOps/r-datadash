@@ -18,6 +18,7 @@ Stance: the heading-to-layout rules are frozen (they are Quarto's own); content 
 - Replace placeholder cells (`plot(cars)`, empty chunks) before sharing. Mechanism: the page renders and looks finished; cause is starter code left in; fix is real data in every card. Reason: an empty card is a silent error.
 - Heading text of rows and columns is discarded. Do not rely on it for labels; use `#| title:`. Reason: Quarto drops it, so the label never shows.
 - Do not promise interactivity from a static render. Reason: inputs need `server: shiny` and a host that can run R.
+- Act only on what the user asked. Before answering or changing anything, open the relevant files and check what is already done; report only what you checked, never guess, and do not redo finished work. Reason: guesses and repeated work waste the user's credit.
 
 ## Agent dispatch
 

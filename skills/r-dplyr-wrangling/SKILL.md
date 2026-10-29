@@ -21,6 +21,7 @@ Stance: check the data before and after every verb (frozen); base R, dplyr or da
 - Do not leave data grouped. Mechanism: a grouped table makes later `summarise()`, `mutate()` and `slice()` run per group and gives odd totals.
 - Keep the original column until the new one is checked. Mechanism: overwriting loses the evidence needed to find a wrong rule.
 - Use made-up or the learner's own data for examples, and label made-up data as such. Reason: real health records are personal.
+- Act only on what the user asked. Before answering or changing anything, open the relevant files and check what is already done; report only what you checked, never guess, and do not redo finished work. Reason: guesses and repeated work waste the user's credit.
 
 ## Agent dispatch
 

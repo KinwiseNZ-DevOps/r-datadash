@@ -19,6 +19,7 @@ Stance: the split between data, ui and server is frozen; the packages (plain Shi
 - Do not export a chart to HTML and embed it in an iframe when an input should change it. Mechanism: the chart stays frozen; fix is `renderPlotly` or `renderPlot`. Reason: interactivity is the point of Shiny.
 - No `setwd()`; use relative paths from the app folder. Reason: the app must run on any machine.
 - Never put a password or API key in `ui.R`, `server.R` or `global.R`. Use environment variables ([r-sql-bridge](../r-sql-bridge/SKILL.md)).
+- Act only on what the user asked. Before answering or changing anything, open the relevant files and check what is already done; report only what you checked, never guess, and do not redo finished work. Reason: guesses and repeated work waste the user's credit.
 
 ## Agent dispatch
 

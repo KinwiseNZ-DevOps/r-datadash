@@ -19,6 +19,7 @@ Stance: the reader's question decides the chart and the layout (frozen); the col
 - Do not truncate an axis to exaggerate a change. Reason: it misleads the reader.
 - Treat the quoted targets (load under ten seconds, interactions under three) as rules of thumb, not guarantees.
 - Never use colour alone to carry meaning. Reason: one in twelve men has a colour-vision difference.
+- Act only on what the user asked. Before answering or changing anything, open the relevant files and check what is already done; report only what you checked, never guess, and do not redo finished work. Reason: guesses and repeated work waste the user's credit.
 
 ## Agent dispatch
 

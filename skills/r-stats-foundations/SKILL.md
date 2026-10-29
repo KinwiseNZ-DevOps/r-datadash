@@ -19,6 +19,7 @@ Stance: state the question, the method and the assumptions before the answer (fr
 - Correlation is not causation, and a significant result is not a large or useful one. Report the size of the effect.
 - Do not call a test "proved". Say "the data support" or "do not support".
 - Use the learner's own data for examples, not made-up numbers, unless the example is labelled as made-up.
+- Act only on what the user asked. Before answering or changing anything, open the relevant files and check what is already done; report only what you checked, never guess, and do not redo finished work. Reason: guesses and repeated work waste the user's credit.
 
 ## Agent dispatch
 
